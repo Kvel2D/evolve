@@ -1,0 +1,73 @@
+TODO
+
+change from IntVector2 to Ve2i
+remove IntVector2 and other gunk
+
+stop moving code around
+
+improve messages
+    flying across the screen is impossible to read
+    needs to be somewhere in a corner, unobstructed, but flashing or something
+
+mutations into new types
+    rare enough but not too much
+    + announcement
+
+toxic mineral
+    damages units
+    skill called resilience reduces damage
+    required for new queens
+
+
+---------------------------------------------------------------------------------
+IDEAS
+
+need to balance skills against each other
+    so that harvesting takes as much as moving
+    changes later in the game of course as you expand further and further
+
+change skill number for display
+    0-100
+
+track rates of change of different things
+    metal/min
+    food/min
+    life expectancy?
+        based on avg damage taken over previous period of time
+
+wacky upgrades that cost a lot
+    double amount of units produced by all queens
+    increase amount of resource extracted from all dig nodes
+
+think about equilibriums
+    should be a point where colony produces X food, Y metal, Z units die every minute and W units are made with metals all of which sums up to stability
+    and then mutations and new units push the equilibrium slightly
+
+more interesting node connections
+    maybe also sometimes connect to 2 nodes nearby? (so that's it's not all radial)
+
+there should be a balanace between hunger and food production
+    need to make it so that you can support a colony with just a small ratio (10-25%) harvesting
+
+animals or natives which have small bases of their own
+
+make it so that it's best to specialize
+    make it progressively harder to generalize in multiple skills and impossible to make the "perfect" unit
+
+how does fighting work?
+    dedicated soldiers?
+    but want fighting skill to matter so that for example if your mine is attached you want your miners to at least be able to do something
+
+comfort temperature?
+    if too far from some number, units start taking damage
+
+events happen at each node
+    for example, a mine is invaded
+    maybe events spread?
+    for example, if a mine is invaded and everyone is wiped out, enemies move to adjacent nodes
+
+when cloning you can search different ordered mob lists
+    top by X skill
+    top by total skills
+    etc
+
