@@ -35,7 +35,7 @@ public static var base_pos = {x: 10, y: 10};
 public static var food_count = 0;
 public static var metal_count = 10;
 static var show_structure_occupancy = true;
-static var camera: IntVector2 = {x: 0, y: 0};
+static var camera: Vec2i = {x: 0, y: 0};
 
 var counts = new Map<Int, Int>();
 
@@ -57,40 +57,6 @@ function new() {
 
     units_init();
     queens_init();
-
-    var values_string = Data.loadtext('values.txt');
-    for (i in 0...1000) {
-        counts[i] = 0;
-    }
-    for (e in values_string) {
-        var value_int = Std.parseInt(e);
-        counts[value_int]++;
-    }
-    Gfx.createimage('graph', SCREEN_WIDTH, SCREEN_HEIGHT);
-    Gfx.drawtoimage('graph');
-    Gfx.fillbox(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, Col.GRAY);
-    var GRAPH_SCALE = 8;
-    var GRAPH_X = 100;
-    var GRAPH_Y = 100;
-    for (i in 0...100) {
-        var count = counts[i];
-        if (count > 0) {
-            var x = GRAPH_X;
-            var y = GRAPH_Y + i * GRAPH_SCALE;
-            Gfx.fillbox(x, y, count * GRAPH_SCALE, 1 * GRAPH_SCALE, Col.BLUE);
-            Gfx.drawbox(x, y, count * GRAPH_SCALE, 1 * GRAPH_SCALE, Col.DARKBLUE);
-        }
-    }
-
-    for (i in 0...5) {
-        Text.display(50, GRAPH_Y + i * 25 * GRAPH_SCALE, '${i * 25}');
-    }
-
-    for (i in 0...5) {
-        Gfx.fillbox(0, GRAPH_Y + i * 25 * GRAPH_SCALE, 1000, 1, Col.WHITE);
-    }
-
-    Gfx.drawtoscreen();
 }
 
 var message_queue = new Array<String>();
@@ -120,7 +86,7 @@ public static inline function in_map(x: Int, y: Int): Bool {
     return !(0 > x || x >= 0 + MAP_WIDTH || 0 > y || y >= 0 + MAP_HEIGHT);
 }
 
-public static function closest_resource_pos(resource: Resource): IntVector2 {
+public static function closest_resource_pos(resource: Resource): Vec2i {
     var closest_pos = null;
     var closest_dst = 100000.0;
     for (x in 0...MAP_WIDTH) {
@@ -265,8 +231,6 @@ function update() {
             }
         }
     }
-
-    Gfx.drawimage(0, 0, 'graph');
 }
 
 }

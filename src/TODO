@@ -1,10 +1,5 @@
 TODO
 
-change from IntVector2 to Ve2i
-remove IntVector2 and other gunk
-
-stop moving code around
-
 improve messages
     flying across the screen is impossible to read
     needs to be somewhere in a corner, unobstructed, but flashing or something
